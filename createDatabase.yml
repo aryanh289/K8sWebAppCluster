@@ -1,0 +1,41 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapplication
+  labels:
+    app: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: 'mysql'
+          image: 'mysql:latest'
+          env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: secint
+                key: pass
+          - name: MYSQL_USER
+            value: harshu
+          - name: MYSQL_PASS
+            valueFrom:
+              secretKeyRef:
+                name: secint
+                key: pass
+          - name: MYSQL_DATABASE
+            value: mywpdb
+        - name: 'wp'
+          image: 'wordpress'
+              
+                  
+                    
+    
