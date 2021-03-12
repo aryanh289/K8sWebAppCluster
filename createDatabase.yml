@@ -35,7 +35,3 @@ spec:
             value: mywpdb
         - name: 'wp'
           image: 'wordpress'
-              
-                  
-                    
-    
