@@ -1,0 +1,60 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secint
+data:
+  pass: dG9vcg==
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapplication
+  labels:
+    app: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: 'mysql'
+          image: 'mysql:latest'
+          env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: secint
+                key: pass
+          - name: MYSQL_USER
+            value: harshu
+          - name: MYSQL_PASS
+            valueFrom:
+              secretKeyRef:
+                name: secint
+                key: pass
+          - name: MYSQL_DATABASE
+            value: mywpdb
+        - name: 'wp'
+          image: 'wordpress'
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myloadbalancer
+spec:
+  selector:
+    app: web
+  type: NodePort
+  ports:
+    - targetPort: 80
+      port: 8080
+      nodePort: 30400
