@@ -4,9 +4,9 @@ Create a K8s single node multi pod cluster using YAML files for Multi tier web a
 STEPS TO FOLLOW:
 
 
-*********************************************************************** UPDATE ********************************************************************************
-  you can directly run the command: `kubectl create -f createCluster.yml` and cluster will be created along with secret file, and ports will be exposed too.
-***************************************************************************************************************************************************************
+*********************************************************************** UPDATE ********************************************************************************<br>
+  you can directly run the command: `kubectl create -f createCluster.yml` and cluster will be created along with secret file, and ports will be exposed too.<br>
+***************************************************************************************************************************************************************<br>
 
 
 1. Download all the three yaml files.<br>
