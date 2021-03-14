@@ -1,5 +1,5 @@
 # K8sWebAppCluster
-Create a K8s single node multi pod cluster using YAML files for Multi tier web application deployment on your machine
+Create a K8s multicontainer pod cluster using YAML files for Multi tier web application deployment on your machine
 
 STEPS TO FOLLOW:
 
