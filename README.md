@@ -5,7 +5,7 @@ STEPS TO FOLLOW:
 
 
 ***************************************************************************************************************************************************************
-  you can directly run the command: `kubectl create -f createCluster.yml` and cluster will be created along with secret file, and ports will be exposed too.
+Either you can use single file `createCluster.yml` and you can directly run the command: `kubectl create -f createCluster.yml` and cluster will be created along with the secret file, and ports will be exposed too Or you can follow below steps to do using three different yaml files.
 ***************************************************************************************************************************************************************
 
 
