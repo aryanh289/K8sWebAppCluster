@@ -2,6 +2,13 @@
 Create a K8s single node multi pod cluster using YAML files for Multi tier web application deployment on your machine
 
 STEPS TO FOLLOW:
+
+
+*********************************************************************** UPDATE ********************************************************************************
+  you can directly run the command: `kubectl create -f createCluster.yml` and cluster will be created along with secret file, and ports will be exposed too.
+***************************************************************************************************************************************************************
+
+
 1. Download all the three yaml files.<br>
 2. In createDatabase file, if you want you can change the MYSQL_USER/ MYSQL_PASS. or you can adjust the number of replicas according to your requirement.(base: 1)<br>
 3. In secret file, you can change the pass variable value, as this is the only password that we are using for accessing the mysql server. Make sure the password is base64 encoded.<br>
